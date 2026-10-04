@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Zenith — Get in Touch with Our Editorial Desk</title>
+  <meta name="description" content="Reach out to Zenith's editorial desk for inquiries, pitches, technical corrections, and syndicate permissions." />
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Sticky Navigation Bar
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Zenith Homepage">
+        <div class="brand-icon-box">
+          <i class="bi bi-feather"></i>
+        </div>
+        <span>Zenith<span class="brand-gradient-text">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#latestArticlesSection" class="nav-link">Latest Posts</a>
+        <a href="index.html#categoriesSection" class="nav-link">Categories</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="bookmarks.html" class="icon-btn" title="Saved Bookmarks" aria-label="Saved Bookmarks">
+          <i class="bi bi-bookmark-heart"></i>
+          <span class="badge-count bookmark-badge" style="display: none;">0</span>
+        </a>
+
+        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+        </button>
+
+        <button class="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#latestArticlesSection" class="nav-link" onclick="closeMobileNav()">Latest Posts</a>
+      <a href="index.html#categoriesSection" class="nav-link" onclick="closeMobileNav()">Categories</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+      <a href="bookmarks.html" class="nav-link" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>Saved Bookmarks</span>
+        <span class="badge-count bookmark-badge" style="display: none; position: static;">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Main Contact Content
+       ========================================================================== -->
+  <main class="main-content">
+    <div class="container" style="padding-top: 3.5rem;">
+      
+      <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
+        <div class="hero-pill-badge">
+          <i class="bi bi-chat-heart"></i> Get in Touch
+        </div>
+        <h1 class="hero-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem;">
+          Connect with Our <span class="brand-gradient-text">Editorial Team</span>
+        </h1>
+        <p class="hero-subtitle" style="margin-bottom: 0;">
+          Have a pitch, technical critique, partnership proposal, or simply want to say hello? We review all correspondence within 24 to 48 hours.
+        </p>
+      </div>
+
+      <!-- Contact Layout (Form + Info) -->
+      <div class="contact-layout">
+        
+        <!-- Contact Form Box -->
+        <div class="contact-card-box">
+          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-primary);">
+            Send a Direct Dispatch
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">
+            Fill in the details below and your message will route directly to the relevant department editor.
+          </p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Full Name <span style="color: #ef4444;">*</span></label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Elena Rostova" required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email Address <span style="color: #ef4444;">*</span></label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="e.g. elena@domain.com" required />
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="contactTopic" class="form-label">Topic / Department</label>
+                <select id="contactTopic" class="form-input">
+                  <option value="Editorial Pitch">Editorial Pitch or Essay Submission</option>
+                  <option value="Technical Critique">Technical Critique / Correction</option>
+                  <option value="Syndication">Syndication & Republication</option>
+                  <option value="Press & Speaking">Press & Speaking Inquiry</option>
+                  <option value="General Feedback">General Reader Feedback</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">Subject <span style="color: #ef4444;">*</span></label>
+                <input type="text" id="contactSubject" class="form-input" placeholder="Brief subject line" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Message <span style="color: #ef4444;">*</span></label>
+              <textarea id="contactMessage" class="form-textarea" style="min-height: 140px;" placeholder="Write your full message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">
+              <i class="bi bi-send-fill"></i> Transmit Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Desk -->
+        <div>
+          <div class="contact-card-box" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-primary);">
+                Editorial Offices
+              </h2>
+              <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                Zenith is produced by a globally distributed team with hubs in San Francisco, London, and Tokyo.
+              </p>
+
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <div class="contact-icon-bubble">
+                    <i class="bi bi-envelope-at-fill"></i>
+                  </div>
+                  <div>
+                    <h4 style="font-size: 1rem; font-weight: 700;">Editorial Inquiries</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">editor@zenithmagazine.org</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Pitches & Essay Proposals</p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-icon-bubble">
+                    <i class="bi bi-newspaper"></i>
+                  </div>
+                  <div>
+                    <h4 style="font-size: 1rem; font-weight: 700;">Press & Syndicate</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">press@zenithmagazine.org</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Licensing and interviews</p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-icon-bubble">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div>
+                    <h4 style="font-size: 1rem; font-weight: 700;">Headquarters</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">580 Howard Street, Suite 400</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">San Francisco, CA 94105</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem;">Join Our Reader Channels</h4>
+              <div class="footer-social-row">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="index.html" class="icon-btn" aria-label="RSS Feed"><i class="bi bi-rss-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==========================================================================
+           Frequently Asked Questions (Accordion)
+           ========================================================================== -->
+      <section class="faq-section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><i class="bi bi-question-circle-fill"></i> Frequently Asked Questions</h2>
+            <p class="section-subtitle">Common questions regarding submissions, licensing, and privacy</p>
+          </div>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- Item 1 -->
+          <div class="faq-item active">
+            <button class="faq-question-btn" type="button">
+              <span>How do I pitch an essay or technical breakdown to Zenith?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              Please include a 200-word abstract of your thesis, a bulleted structural outline, and 2-3 links to your prior writing or public GitHub repositories. Send your pitch with the subject tag [PITCH] to editor@zenithmagazine.org.
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button">
+              <span>Can I syndicate or translate Zenith articles?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              Yes, under explicit written permission. Non-commercial translations with canonical rel tags linking back to Zenith are often approved. Please contact press@zenithmagazine.org with your intended distribution platform.
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button">
+              <span>Where are my bookmarks and comments stored?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              To prioritize maximum reader privacy and instant zero-latency access, all bookmarked articles, theme preferences, and locally posted comments reside solely inside your browser's HTML5 LocalStorage. No tracking cookies or third-party servers store your reading list.
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button">
+              <span>Do you accept sponsored native articles?</span>
+              <i class="bi bi-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              Zenith maintains strict editorial independence. We do not accept paid guest posts, unverified sponsored articles, or hidden affiliate placement. All published essays are held to identical technical peer-review standards.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 1rem;">
+              <i class="bi bi-feather"></i>
+            </div>
+            <span>Zenith<span class="brand-gradient-text">.</span></span>
+          </a>
+          <p class="footer-desc">
+            An independent digital publication dedicated to rigorous essays on computing architecture, modern design systems, human focus, and global culture.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="index.html" class="icon-btn" aria-label="RSS Feed"><i class="bi bi-rss-fill"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Navigation</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="index.html#latestArticlesSection" class="footer-link">Latest Stories</a></li>
+            <li><a href="bookmarks.html" class="footer-link">Saved Bookmarks</a></li>
+            <li><a href="about.html" class="footer-link">About Publication</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Editorial</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Top Categories</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html?category=AI" class="footer-link">Artificial Intelligence</a></li>
+            <li><a href="index.html?category=Programming" class="footer-link">Programming & Code</a></li>
+            <li><a href="index.html?category=Technology" class="footer-link">Technology & Design</a></li>
+            <li><a href="index.html?category=Lifestyle" class="footer-link">Lifestyle & Focus</a></li>
+            <li><a href="index.html?category=Travel" class="footer-link">Slow Travel</a></li>
+            <li><a href="index.html?category=Education" class="footer-link">Continuous Learning</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Editorial Standards</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            Every article is subject to peer verification and technical review. We believe in high signal, low noise journalism.
+          </p>
+          <a href="about.html" class="read-more-link">Read our editorial charter <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Zenith Editorial Magazine. All rights reserved. Built with modern HTML5, CSS3, & Vanilla JS.
+        </div>
+        <div>
+          <a href="#" class="back-to-top-btn" aria-label="Back to top of page">
+            <i class="bi bi-arrow-up"></i> Back to Top
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // FAQ Accordion Interaction
+    document.querySelectorAll('.faq-question-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Contact Form Submission with Validation & Toast
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const subject = document.getElementById('contactSubject').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+
+        if (!name || !email || !subject || !message) {
+          showToast('Please fill out all required fields marked with an asterisk (*).', 'error');
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          showToast('Please provide a valid email address.', 'error');
+          return;
+        }
+
+        // Simulate successful transmission
+        showToast(`Thank you, ${name}! Your dispatch has been received by our editorial desk.`, 'success');
+        contactForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>

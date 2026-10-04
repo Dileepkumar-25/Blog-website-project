@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Zenith — Editorial Charter & Mission</title>
+  <meta name="description" content="Learn about Zenith's editorial mission, our contributors, and our standards for longform technical and cultural journalism." />
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Sticky Navigation Bar
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Zenith Homepage">
+        <div class="brand-icon-box">
+          <i class="bi bi-feather"></i>
+        </div>
+        <span>Zenith<span class="brand-gradient-text">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#latestArticlesSection" class="nav-link">Latest Posts</a>
+        <a href="index.html#categoriesSection" class="nav-link">Categories</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="bookmarks.html" class="icon-btn" title="Saved Bookmarks" aria-label="Saved Bookmarks">
+          <i class="bi bi-bookmark-heart"></i>
+          <span class="badge-count bookmark-badge" style="display: none;">0</span>
+        </a>
+
+        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+        </button>
+
+        <button class="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#latestArticlesSection" class="nav-link" onclick="closeMobileNav()">Latest Posts</a>
+      <a href="index.html#categoriesSection" class="nav-link" onclick="closeMobileNav()">Categories</a>
+      <a href="about.html" class="nav-link active">About Us</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="bookmarks.html" class="nav-link" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>Saved Bookmarks</span>
+        <span class="badge-count bookmark-badge" style="display: none; position: static;">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Main About Content
+       ========================================================================== -->
+  <main class="main-content">
+    
+    <!-- Hero / Mission -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="hero-pill-badge">
+          <i class="bi bi-shield-check"></i> Editorial Charter
+        </div>
+
+        <h1 class="hero-title" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+          We write for thinkers navigating a world in <span class="brand-gradient-text">hyper-speed</span>.
+        </h1>
+
+        <p class="hero-subtitle" style="max-width: 760px;">
+          Founded in 2024, Zenith is an independent digital publication committed to depth, intellectual honesty, and enduring craftsmanship across computing, architecture, lifestyle, and culture.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Metrics Stats -->
+    <section class="container">
+      <div class="about-stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">In-depth Essays Published</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">120K+</div>
+          <div class="stat-label">Monthly Active Readers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">45+</div>
+          <div class="stat-label">Contributing Researchers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">64</div>
+          <div class="stat-label">Countries Represented</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><i class="bi bi-compass-fill"></i> Our Guiding Principles</h2>
+          <p class="section-subtitle">What drives our editorial curation every single day</p>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon-box">
+            <i class="bi bi-gem"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Signal Over Noise</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            We reject rage-bait algorithms and superficial listicles. Every piece is drafted with patience, peer-reviewed by domain specialists, and designed to stay relevant for years.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon-box">
+            <i class="bi bi-cpu-fill"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Architectural Rigor</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            When discussing code or machine intelligence, we dissect the actual mechanics—reproducing tests, citing primary RFCs, and unpacking real performance trade-offs.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon-box">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Digital Humanism</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            Technology exists to serve human flourishing. We examine how tools shape our attention, culture, physical spaces, and capacity for deep, deliberate connection.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Board Team -->
+    <section class="container" style="margin: 4.5rem auto;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><i class="bi bi-person-badge-fill"></i> Editorial Board</h2>
+          <p class="section-subtitle">Meet the practitioners and writers behind our essays</p>
+        </div>
+      </div>
+
+      <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Dr. Elena Vance" class="team-avatar" />
+          <h3 class="team-name">Dr. Elena Vance</h3>
+          <div class="team-role">Lead AI Systems Architect</div>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+            Specializes in agentic architectures, context engineering, and distributed machine learning protocols.
+          </p>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Julian Rivera" class="team-avatar" />
+          <h3 class="team-name">Julian Rivera</h3>
+          <div class="team-role">Senior Frontend Engineer</div>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+            Focuses on modern CSS specifications, fluid design systems, and TypeScript runtime contracts.
+          </p>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Amina Al-Mansoor" class="team-avatar" />
+          <h3 class="team-name">Amina Al-Mansoor</h3>
+          <div class="team-role">Global UX Researcher</div>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+            Investigates universal accessibility, multi-lingual design, and performance for emerging mobile markets.
+          </p>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80" alt="Mateo Rossi" class="team-avatar" />
+          <h3 class="team-name">Mateo Rossi</h3>
+          <div class="team-role">Travel Essayist & Photographer</div>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+            Documents slow travel, rural crafts, alpine walking routes, and architectural serenity across Europe and Asia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="container">
+      <div class="newsletter-card">
+        <div class="newsletter-icon-circle">
+          <i class="bi bi-mailbox2"></i>
+        </div>
+        <h2 class="newsletter-title">Join Our Thoughtful Community</h2>
+        <p class="newsletter-desc">
+          Receive our weekly longform edition directly to your inbox every Sunday morning. Free forever.
+        </p>
+
+        <form class="newsletter-form" novalidate>
+          <input type="email" class="newsletter-input" placeholder="Your email address..." required aria-label="Email address" />
+          <button type="submit" class="btn-primary">Subscribe Free</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 1rem;">
+              <i class="bi bi-feather"></i>
+            </div>
+            <span>Zenith<span class="brand-gradient-text">.</span></span>
+          </a>
+          <p class="footer-desc">
+            An independent digital publication dedicated to rigorous essays on computing architecture, modern design systems, human focus, and global culture.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="index.html" class="icon-btn" aria-label="RSS Feed"><i class="bi bi-rss-fill"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Navigation</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="index.html#latestArticlesSection" class="footer-link">Latest Stories</a></li>
+            <li><a href="bookmarks.html" class="footer-link">Saved Bookmarks</a></li>
+            <li><a href="about.html" class="footer-link">About Publication</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Editorial</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Top Categories</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html?category=AI" class="footer-link">Artificial Intelligence</a></li>
+            <li><a href="index.html?category=Programming" class="footer-link">Programming & Code</a></li>
+            <li><a href="index.html?category=Technology" class="footer-link">Technology & Design</a></li>
+            <li><a href="index.html?category=Lifestyle" class="footer-link">Lifestyle & Focus</a></li>
+            <li><a href="index.html?category=Travel" class="footer-link">Slow Travel</a></li>
+            <li><a href="index.html?category=Education" class="footer-link">Continuous Learning</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Editorial Standards</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            Every article is subject to peer verification and technical review. We believe in high signal, low noise journalism.
+          </p>
+          <a href="about.html" class="read-more-link">Read our editorial charter <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Zenith Editorial Magazine. All rights reserved. Built with modern HTML5, CSS3, & Vanilla JS.
+        </div>
+        <div>
+          <a href="#" class="back-to-top-btn" aria-label="Back to top of page">
+            <i class="bi bi-arrow-up"></i> Back to Top
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

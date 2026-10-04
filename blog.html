@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article Story - Zenith Editorial</title>
+  <meta name="description" content="Read in-depth editorial articles, architectural perspectives, and cultural insights on Zenith." />
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Fixed Reading Progress Indicator -->
+  <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+  <!-- ==========================================================================
+       Sticky Navigation Bar
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Zenith Homepage">
+        <div class="brand-icon-box">
+          <i class="bi bi-feather"></i>
+        </div>
+        <span>Zenith<span class="brand-gradient-text">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#latestArticlesSection" class="nav-link">Latest Posts</a>
+        <a href="index.html#categoriesSection" class="nav-link">Categories</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="bookmarks.html" class="icon-btn" title="Saved Bookmarks" aria-label="Saved Bookmarks">
+          <i class="bi bi-bookmark-heart"></i>
+          <span class="badge-count bookmark-badge" style="display: none;">0</span>
+        </a>
+
+        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+        </button>
+
+        <button class="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#latestArticlesSection" class="nav-link">Latest Posts</a>
+      <a href="index.html#categoriesSection" class="nav-link">Categories</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="bookmarks.html" class="nav-link" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>Saved Bookmarks</span>
+        <span class="badge-count bookmark-badge" style="display: none; position: static;">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Article Main Wrapper
+       ========================================================================== -->
+  <main class="main-content" id="articleMainContent">
+    <div class="article-container">
+      
+      <!-- Breadcrumbs -->
+      <nav class="article-breadcrumbs" id="articleBreadcrumbs" aria-label="Breadcrumb"></nav>
+
+      <!-- Article Header & Metadata -->
+      <header class="article-header" id="articleHeader"></header>
+
+      <!-- Article Cover Media -->
+      <div id="articleCoverWrapper"></div>
+
+      <!-- Rich Article Typography Body -->
+      <article class="article-content" id="articleBodyContent"></article>
+
+      <!-- Article Tags Bar -->
+      <div class="article-tags-bar" id="articleTagsBar"></div>
+
+      <!-- Social Sharing Bar -->
+      <section class="social-share-section" aria-label="Share this article">
+        <div class="social-share-title">
+          <i class="bi bi-share-fill"></i> Share this story:
+        </div>
+        <div class="share-buttons-group">
+          <a href="#" class="share-btn btn-whatsapp" id="shareWhatsApp" target="_blank" rel="noopener noreferrer" title="Share on WhatsApp" aria-label="Share on WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="#" class="share-btn btn-facebook" id="shareFacebook" target="_blank" rel="noopener noreferrer" title="Share on Facebook" aria-label="Share on Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" class="share-btn btn-linkedin" id="shareLinkedIn" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn" aria-label="Share on LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="#" class="share-btn btn-twitter" id="shareTwitter" target="_blank" rel="noopener noreferrer" title="Share on X / Twitter" aria-label="Share on X / Twitter">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <button class="share-btn btn-copy" id="shareCopyLink" title="Copy Article Link" aria-label="Copy Article Link">
+            <i class="bi bi-link-45deg"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- Author Bio Card -->
+      <div id="articleAuthorBio"></div>
+
+      <!-- Adjacent Story Navigation (Prev / Next) -->
+      <nav id="adjacentNavContainer" aria-label="Previous and Next Articles"></nav>
+
+      <!-- Related Articles Section -->
+      <section class="related-section" id="relatedSection" style="margin: 4.5rem 0 2rem;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><i class="bi bi-journal-bookmark-fill"></i> Related Stories</h2>
+            <p class="section-subtitle">More in-depth reading tailored to this topic</p>
+          </div>
+          <a href="index.html" class="read-more-link">View all articles <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="articles-grid" id="relatedArticlesGrid" style="grid-template-columns: repeat(3, 1fr);"></div>
+      </section>
+
+      <!-- ==========================================================================
+           Comments Section (Browser Local Storage)
+           ========================================================================== -->
+      <section class="comments-section" id="commentsSection" aria-label="Reader Comments">
+        <div class="comments-header">
+          <div>
+            <h2 class="comments-title">
+              Reader Discussion <span id="commentsCount" style="color: var(--text-muted); font-size: 1.25rem;">(0)</span>
+            </h2>
+            <p class="comments-storage-note">
+              <i class="bi bi-hdd-network"></i> Comments are saved in your local browser storage and remain private to this device.
+            </p>
+          </div>
+        </div>
+
+        <!-- Add Comment Form -->
+        <form class="comment-form" id="commentForm" novalidate>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="commentAuthor" class="form-label">Your Name <span style="color: #ef4444;">*</span></label>
+              <input type="text" id="commentAuthor" class="form-input" placeholder="e.g. Alex Morgan" required />
+            </div>
+            <div class="form-group">
+              <label for="commentEmail" class="form-label">Email (Optional, not published)</label>
+              <input type="email" id="commentEmail" class="form-input" placeholder="e.g. alex@example.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="commentText" class="form-label">Your Comment <span style="color: #ef4444;">*</span></label>
+            <textarea id="commentText" class="form-textarea" placeholder="Share your perspective, constructive critique, or related insights..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">
+            <i class="bi bi-chat-dots-fill"></i> Post Comment
+          </button>
+        </form>
+
+        <!-- Comments List -->
+        <div class="comments-list" id="commentsList"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 1rem;">
+              <i class="bi bi-feather"></i>
+            </div>
+            <span>Zenith<span class="brand-gradient-text">.</span></span>
+          </a>
+          <p class="footer-desc">
+            An independent digital publication dedicated to rigorous essays on computing architecture, modern design systems, human focus, and global culture.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="index.html" class="icon-btn" aria-label="RSS Feed"><i class="bi bi-rss-fill"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Navigation</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="index.html#latestArticlesSection" class="footer-link">Latest Stories</a></li>
+            <li><a href="bookmarks.html" class="footer-link">Saved Bookmarks</a></li>
+            <li><a href="about.html" class="footer-link">About Publication</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Editorial</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Top Categories</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html?category=AI" class="footer-link">Artificial Intelligence</a></li>
+            <li><a href="index.html?category=Programming" class="footer-link">Programming & Code</a></li>
+            <li><a href="index.html?category=Technology" class="footer-link">Technology & Design</a></li>
+            <li><a href="index.html?category=Lifestyle" class="footer-link">Lifestyle & Focus</a></li>
+            <li><a href="index.html?category=Travel" class="footer-link">Slow Travel</a></li>
+            <li><a href="index.html?category=Education" class="footer-link">Continuous Learning</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Editorial Standards</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            Every article is subject to peer verification and technical review. We believe in high signal, low noise journalism.
+          </p>
+          <a href="about.html" class="read-more-link">Read our editorial charter <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Zenith Editorial Magazine. All rights reserved. Built with modern HTML5, CSS3, & Vanilla JS.
+        </div>
+        <div>
+          <a href="#" class="back-to-top-btn" aria-label="Back to top of page">
+            <i class="bi bi-arrow-up"></i> Back to Top
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/features.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>

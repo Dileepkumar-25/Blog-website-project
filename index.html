@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenith — Modern Editorial Magazine & Blog</title>
+  <meta name="description" content="Discover in-depth essays, architectural insights, emerging technology, and thoughtful cultural commentary on Zenith." />
+  <meta name="keywords" content="technology blog, programming tutorials, AI insights, lifestyle essays, travel stories, modern web development" />
+  <meta name="author" content="Zenith Editorial Team" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="Zenith — Modern Editorial Magazine & Blog" />
+  <meta property="og:description" content="Discover in-depth essays, architectural insights, emerging technology, and thoughtful cultural commentary." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Bootstrap Icons CDN for clean vector icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Sticky Navigation Bar
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Zenith Homepage">
+        <div class="brand-icon-box">
+          <i class="bi bi-feather"></i>
+        </div>
+        <span>Zenith<span class="brand-gradient-text">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="#latestArticlesSection" class="nav-link">Latest Posts</a>
+        <a href="#categoriesSection" class="nav-link">Categories</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Bookmarks Page Link with Count Badge -->
+        <a href="bookmarks.html" class="icon-btn" title="Saved Bookmarks" aria-label="Saved Bookmarks">
+          <i class="bi bi-bookmark-heart"></i>
+          <span class="badge-count bookmark-badge" style="display: none;">0</span>
+        </a>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+        </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="#latestArticlesSection" class="nav-link" onclick="closeMobileNav()">Latest Posts</a>
+      <a href="#categoriesSection" class="nav-link" onclick="closeMobileNav()">Categories</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="bookmarks.html" class="nav-link" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>Saved Bookmarks</span>
+        <span class="badge-count bookmark-badge" style="display: none; position: static;">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Main Content
+       ========================================================================== -->
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-pill-badge">
+          <i class="bi bi-stars"></i> Curated Editorial Edition 2026
+        </div>
+
+        <h1 class="hero-title">
+          Ideas that illuminate the <br />
+          <span class="brand-gradient-text">cutting edge</span> of technology & life.
+        </h1>
+
+        <p class="hero-subtitle">
+          Explore thoughtful perspectives on autonomous intelligence, frontend engineering craft, mindful productivity, and global culture.
+        </p>
+
+        <!-- Search Bar with Live Filter & Shortcut -->
+        <div class="search-wrapper">
+          <div class="search-box-container">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" 
+                   id="searchInput" 
+                   class="search-input" 
+                   placeholder="Search articles by title, author, keyword, or press '/'..." 
+                   aria-label="Search articles" 
+                   autocomplete="off" />
+            <button id="searchClearBtn" class="search-clear-btn" title="Clear Search">
+              <i class="bi bi-x-circle-fill"></i>
+            </button>
+            <button class="btn-primary" onclick="document.getElementById('latestArticlesSection').scrollIntoView({behavior: 'smooth'})">
+              Search
+            </button>
+          </div>
+
+          <!-- Trending Topics Quick-Tag Pills -->
+          <div class="trending-tags-bar">
+            <span>Trending:</span>
+            <button class="trending-tag-pill" data-tag="Artificial Intelligence">#AI</button>
+            <button class="trending-tag-pill" data-tag="CSS">#CSS</button>
+            <button class="trending-tag-pill" data-tag="TypeScript">#TypeScript</button>
+            <button class="trending-tag-pill" data-tag="Deep Work">#DeepWork</button>
+            <button class="trending-tag-pill" data-tag="Slow Travel">#SlowTravel</button>
+            <button class="trending-tag-pill" data-tag="Web Performance">#Performance</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Featured Article Section
+         ========================================================================== -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><i class="bi bi-star-fill"></i> Featured Cover Story</h2>
+            <p class="section-subtitle">Specially selected by our senior editorial board</p>
+          </div>
+        </div>
+
+        <!-- Featured Card Layout -->
+        <article class="featured-card">
+          <div class="featured-media-wrapper">
+            <a href="blog.html?id=1" aria-label="Read Featured Article">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Generative neural architecture visual" 
+                   class="featured-media-img" />
+            </a>
+          </div>
+          <div class="featured-content">
+            <div>
+              <div class="featured-badge-row">
+                <span class="category-badge cat-ai">AI</span>
+                <span class="featured-highlight-badge"><i class="bi bi-lightning-charge-fill"></i> Must Read</span>
+              </div>
+              <h3 class="featured-title">
+                <a href="blog.html?id=1">The Dawn of Autonomous Coding Agents: How AI Is Reshaping Software Engineering</a>
+              </h3>
+              <p class="featured-excerpt">
+                Beyond autocomplete: how agentic workflows, multi-step reasoning, and tool use are redefining the daily craft of developers. Explore the three architectural pillars driving this shift.
+              </p>
+            </div>
+
+            <div class="author-meta-row">
+              <div class="author-chip">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                     alt="Dr. Elena Vance" 
+                     class="author-avatar" />
+                <div>
+                  <div class="author-info-name">Dr. Elena Vance</div>
+                  <div class="author-info-meta">
+                    <span>Oct 2, 2026</span>
+                    <span>•</span>
+                    <span>8 min read</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="blog.html?id=1" class="btn-primary" aria-label="Read full featured story">
+                Read Story <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Categories & Filters Section
+         ========================================================================== -->
+    <section class="container" id="categoriesSection" style="padding-top: 1rem;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><i class="bi bi-collection-fill"></i> Explore by Category</h2>
+          <p class="section-subtitle">Filter articles by your primary areas of curiosity</p>
+        </div>
+      </div>
+
+      <!-- Horizontal Category Pills -->
+      <div class="category-filter-nav" role="tablist" aria-label="Article Categories">
+        <button class="category-pill-btn active" data-category="All" role="tab">
+          <i class="bi bi-grid-fill"></i> All <span class="count-badge">12</span>
+        </button>
+        <button class="category-pill-btn" data-category="AI" role="tab">
+          <i class="bi bi-cpu"></i> AI <span class="count-badge">2</span>
+        </button>
+        <button class="category-pill-btn" data-category="Programming" role="tab">
+          <i class="bi bi-code-slash"></i> Programming <span class="count-badge">2</span>
+        </button>
+        <button class="category-pill-btn" data-category="Technology" role="tab">
+          <i class="bi bi-laptop"></i> Technology <span class="count-badge">2</span>
+        </button>
+        <button class="category-pill-btn" data-category="Lifestyle" role="tab">
+          <i class="bi bi-heart-pulse"></i> Lifestyle <span class="count-badge">2</span>
+        </button>
+        <button class="category-pill-btn" data-category="Travel" role="tab">
+          <i class="bi bi-compass"></i> Travel <span class="count-badge">2</span>
+        </button>
+        <button class="category-pill-btn" data-category="Education" role="tab">
+          <i class="bi bi-mortarboard"></i> Education <span class="count-badge">2</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Latest Articles Grid & Pagination
+         ========================================================================== -->
+    <section class="container" id="latestArticlesSection">
+      <!-- Active Filter Status Indicator Bar -->
+      <div id="filterStatusBar" class="filter-status-bar" style="display: none;"></div>
+
+      <!-- Dynamic Cards Grid (Rendered by features.js) -->
+      <div id="articlesGrid" class="articles-grid" aria-live="polite"></div>
+
+      <!-- Pagination / Load More Section -->
+      <div id="paginationWrapper" class="pagination-wrapper">
+        <p id="loadMoreCounter" class="load-more-counter">Showing 6 of 12 articles</p>
+        <div class="progress-counter-bar">
+          <div id="progressCounterFill" class="progress-counter-fill" style="width: 50%;"></div>
+        </div>
+        <button id="loadMoreBtn" class="btn-secondary" style="padding: 0.75rem 2rem; font-size: 1rem;">
+          <i class="bi bi-plus-circle"></i> Load More Articles
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Popular Posts & Trending Topics Section
+         ========================================================================== -->
+    <section class="container">
+      <div class="trending-section">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <div>
+            <h2 class="section-title"><i class="bi bi-graph-up-arrow"></i> Most Read This Week</h2>
+            <p class="section-subtitle">Top stories generating thoughtful discussions right now</p>
+          </div>
+        </div>
+
+        <div class="trending-grid">
+          <!-- Item 1 -->
+          <div class="trending-item">
+            <span class="trending-number">01</span>
+            <div class="trending-item-content">
+              <span class="trending-category">AI</span>
+              <a href="blog.html?id=8" class="trending-item-title">Prompt Engineering vs Context Engineering: What LLM Architects Must Know</a>
+              <span class="trending-meta"><i class="bi bi-eye"></i> 18.9k views • 10 min read</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="trending-item">
+            <span class="trending-number">02</span>
+            <div class="trending-item-content">
+              <span class="trending-category">Travel</span>
+              <a href="blog.html?id=4" class="trending-item-title">Slow Travel: Discovering Hidden Mountain Communities Across the Swiss Alps</a>
+              <span class="trending-meta"><i class="bi bi-eye"></i> 16.4k views • 5 min read</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="trending-item">
+            <span class="trending-number">03</span>
+            <div class="trending-item-content">
+              <span class="trending-category">Programming</span>
+              <a href="blog.html?id=6" class="trending-item-title">The Evolution of TypeScript: Everything Frontend Developers Need to Know</a>
+              <span class="trending-meta"><i class="bi bi-eye"></i> 15.6k views • 9 min read</span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="trending-item">
+            <span class="trending-number">04</span>
+            <div class="trending-item-content">
+              <span class="trending-category">Education</span>
+              <a href="blog.html?id=12" class="trending-item-title">From Junior to Staff Engineer: The Mental Shifts That Actually Matter</a>
+              <span class="trending-meta"><i class="bi bi-eye"></i> 17.3k views • 11 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Newsletter Subscription Section
+         ========================================================================== -->
+    <section class="container">
+      <div class="newsletter-card">
+        <div class="newsletter-icon-circle">
+          <i class="bi bi-envelope-paper-heart"></i>
+        </div>
+        <h2 class="newsletter-title">Stay Curious. Never Miss an Issue.</h2>
+        <p class="newsletter-desc">
+          Join over 120,000 engineers, designers, and thinkers who receive our Sunday digest of longform essays and technological breakdowns.
+        </p>
+
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <input type="email" 
+                 class="newsletter-input" 
+                 placeholder="Enter your email address..." 
+                 required 
+                 aria-label="Email address for newsletter" />
+          <button type="submit" class="btn-primary" style="white-space: nowrap;">
+            Subscribe Free <i class="bi bi-send-fill"></i>
+          </button>
+        </form>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">
+          No spam, ever. Unsubscribe at any time with one click. Stored securely.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 1rem;">
+              <i class="bi bi-feather"></i>
+            </div>
+            <span>Zenith<span class="brand-gradient-text">.</span></span>
+          </a>
+          <p class="footer-desc">
+            An independent digital publication dedicated to rigorous essays on computing architecture, modern design systems, human focus, and global culture.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="index.html" class="icon-btn" aria-label="RSS Feed"><i class="bi bi-rss-fill"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="footer-col-title">Quick Navigation</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="#latestArticlesSection" class="footer-link">Latest Stories</a></li>
+            <li><a href="bookmarks.html" class="footer-link">Saved Bookmarks</a></li>
+            <li><a href="about.html" class="footer-link">About Publication</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Editorial</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Topics -->
+        <div>
+          <h4 class="footer-col-title">Top Categories</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html?category=AI" class="footer-link">Artificial Intelligence</a></li>
+            <li><a href="index.html?category=Programming" class="footer-link">Programming & Code</a></li>
+            <li><a href="index.html?category=Technology" class="footer-link">Technology & Design</a></li>
+            <li><a href="index.html?category=Lifestyle" class="footer-link">Lifestyle & Focus</a></li>
+            <li><a href="index.html?category=Travel" class="footer-link">Slow Travel</a></li>
+            <li><a href="index.html?category=Education" class="footer-link">Continuous Learning</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Editorial Standards -->
+        <div>
+          <h4 class="footer-col-title">Editorial Standards</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            Every article is subject to peer verification and technical review. We believe in high signal, low noise journalism.
+          </p>
+          <a href="about.html" class="read-more-link">Read our editorial charter <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 Zenith Editorial Magazine. All rights reserved. Built with modern HTML5, CSS3, & Vanilla JS.
+        </div>
+        <div>
+          <a href="#" class="back-to-top-btn" aria-label="Back to top of page">
+            <i class="bi bi-arrow-up"></i> Back to Top
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/features.js"></script>
+</body>
+</html>
